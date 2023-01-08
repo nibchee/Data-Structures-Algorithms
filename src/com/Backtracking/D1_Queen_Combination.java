@@ -1,0 +1,29 @@
+package com.Backtracking;
+
+public class D1_Queen_Combination {
+    public static void main(String[] args) {
+        boolean board[]=new boolean[4];
+        queen_Combination(board,2,0,"",-1);
+    }
+    public static void queen_Combination(boolean board[],int total_queens,int queen_placed_so_Far,String ans,int lastBoxUsed){
+
+        //base case
+        if(total_queens==queen_placed_so_Far){
+            System.out.println(ans);
+        }
+
+
+        for(int i=lastBoxUsed+1;i<board.length;i++){
+
+                //Put your Queen so mark it as true
+                board[i]=true;
+                //Call for next Queen Placement
+                queen_Combination(board,total_queens,queen_placed_so_Far+1,ans+"Q"+queen_placed_so_Far+"B"+i+" ",i);
+
+                //After getting Placed remove it i.e mark it as false
+                board[i]=false;
+
+        }
+
+    }
+}

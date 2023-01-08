@@ -1,9 +1,7 @@
-package com.company;
+package com.Heap;
 
-public class Main {
-
+public class HeapGCClient {
     public static void main(String[] args) {
 
     }
-
 }
